@@ -25,7 +25,7 @@ public class MessageBroker {
     public synchronized void push(String producerName, String message) throws IOException {
         synchronized (this){
             // push the message to queue
-            System.out.println("pushed: " + message);
+            // System.out.println("pushed: " + message);
             writer.pushMessage(message);
             pushCount++;
             notify();
@@ -38,7 +38,7 @@ public class MessageBroker {
             if (pullCount == pushCount) {
                 wait();
             }
-            System.out.println(pullCount + ", " + pushCount);
+            // System.out.println(pullCount + ", " + pushCount);
             String message = reader.pullMessage();
             pullCount++;
             // get the messages from queue

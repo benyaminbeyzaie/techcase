@@ -27,7 +27,7 @@ public class Consumer extends Thread {
                     sleep(1);
                     String message = messageBroker.pull(this.name);
                     if (message != null){
-                        System.out.println(message);
+                        // System.out.println(message);
                         printWriter.println(message);
                         printWriter.flush();
                     }
