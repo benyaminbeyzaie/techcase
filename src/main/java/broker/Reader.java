@@ -14,6 +14,8 @@ class Reader {
     }
 
     String pullMessage() throws IOException {
-        return queue.readLine();
+        String s = queue.readLine();
+        if (s == null) queue.seek(0);
+        return s;
     }
 }
