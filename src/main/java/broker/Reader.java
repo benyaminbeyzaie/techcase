@@ -2,16 +2,18 @@ package broker;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 class Reader {
-    private File queue;
-    Reader(File queue){
+    private RandomAccessFile queue;
+
+    Reader(RandomAccessFile queue){
         this.queue = queue;
     }
 
-    String pullMessage() throws FileNotFoundException {
-        Scanner scanner = new Scanner(queue);
-        return scanner.nextLine();
+    String pullMessage() throws IOException {
+        return queue.readLine();
     }
 }
