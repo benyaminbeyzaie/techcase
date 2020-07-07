@@ -25,11 +25,15 @@ public class Consumer extends Thread {
             synchronized (lock){
                 try {
                     sleep(1);
-                    printWriter.println(messageBroker.pull(this.name));
+                    String message = messageBroker.pull(this.name);
+                    if (message != null){
+                        System.out.println(message);
+                        printWriter.println(message);
+                        printWriter.flush();
+                    }
                 } catch (InterruptedException | IOException e) {
                     e.printStackTrace();
                 }
-                printWriter.flush();
             }
         }
     }
