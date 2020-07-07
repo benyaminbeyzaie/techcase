@@ -12,6 +12,7 @@ class Writer {
 
 
     void pushMessage(String message) throws IOException {
-        queue.writeChars(message);
+        queue.writeBytes(message);
+        queue.writeBytes("\n");
     }
 }
