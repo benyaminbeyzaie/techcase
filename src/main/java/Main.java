@@ -3,7 +3,11 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        new Program(3, 3, new File("src/main/resources/input.txt")).execute();
+        // Program takes a file and read it by producers
+        // the output of program is yourFileName_output.txt
+        // the .data file works like a buffer
 
+
+        new Program(3, 3, new File("src/main/resources/input.txt")).execute();
     }
 }
