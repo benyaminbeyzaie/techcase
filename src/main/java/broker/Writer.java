@@ -5,13 +5,13 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 class Writer {
-    RandomAccessFile queue;
+    private RandomAccessFile queue;
     Writer(RandomAccessFile queue){
         this.queue = queue;
     }
 
 
-    public void pushMessage(String message) throws IOException {
+    void pushMessage(String message) throws IOException {
         queue.writeChars(message);
     }
 }
